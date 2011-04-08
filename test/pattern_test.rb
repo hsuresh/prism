@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), 'test_helper')
+require File.join('.', File.dirname(__FILE__), 'test_helper')
 
 class PatternTest < Test::Unit::TestCase
   describe 'Mapper' do
