@@ -37,6 +37,7 @@ Gem::Specification.new do |s|
      "lib/prism/microformat/xfn.rb",
      "lib/prism/microformat/xmdp.rb",
      "lib/prism/microformat/xoxo.rb",
+     "lib/prism/microformat/hcalendar.rb",
      "lib/prism/pattern.rb",
      "lib/prism/pattern/abbr.rb",
      "lib/prism/pattern/datetime.rb",
