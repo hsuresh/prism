@@ -46,7 +46,7 @@ module Prism
     case normalize(key)
       when :valueclass, :abbr, :uri, :url, :typevalue
         Prism::Pattern.map(key)
-      when :hcard, :geo, :rellicense, :reltag, :votelinks, :xfn, :xmdp, :xoxo, :adr
+      when :hcard, :geo, :rellicense, :reltag, :votelinks, :xfn, :xmdp, :xoxo, :adr, :hresume, :hcalendar
         Prism::Microformat.map(key)
       when :base
         Prism::POSH::Base
@@ -113,7 +113,8 @@ module Prism
     if found_in?(document)
       nodes = find_in(document)
       if nodes.respond_to?(:collect)
-        nodes.collect { |element| extract_from(element) }
+        foo = nodes.collect { |element| extract_from(element) }
+        foo
       else
         extract_from(document)
       end

@@ -7,16 +7,17 @@ module Prism
       
       name :vcalendar
       
-      search do |doc|
-        vcalendar = doc.css("#{name}")
-        if vcalendar.empty? && !doc.css('.vevent').empty?
-          doc
-        else
-          vcalendar
-        end
-      end
+      # search do |doc|
+      #   vcalendar = doc.css("#{name}")
+      #   if vcalendar.empty? && !doc.css('.vevent').empty?
+      #     doc
+      #   else
+      #     vcalendar
+      #   end
+      # end
       
       has_many :vevent do
+
         has_one(:dtstart, :summary) { required! }
         
         has_one :duration, :dtend, :location, :description, :dtstamp,

@@ -7,6 +7,7 @@ class HCardTest < Test::Unit::TestCase
     def self.before_all
       @doc ||= Nokogiri.parse(get_fixture('hcard/commercenet.html'))
       @vcard ||= @@klass.parse(@doc)
+      
     end
     
     setup do
@@ -22,7 +23,7 @@ class HCardTest < Test::Unit::TestCase
     end
   end 
   
-  # http://www.ufxtract.com/testsuite/hcard/hcard1.htm
+  http://www.ufxtract.com/testsuite/hcard/hcard1.htm
   describe 'single occurence test' do
     def self.before_all
       @doc ||= test_fixture('hcard/hcard1.html')

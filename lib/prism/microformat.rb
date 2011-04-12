@@ -17,7 +17,9 @@ module Prism
         :votelinks  => Prism::Microformat::VoteLinks,
         :xfn        => Prism::Microformat::XFN,
         :xmdp       => Prism::Microformat::XMDP,
-        :xoxo       => Prism::Microformat::XOXO }
+        :xoxo       => Prism::Microformat::XOXO,
+        :hresume    => Prism::Microformat::HResume
+      }
     end
 
     def self.find(html, uformat = nil)
@@ -39,6 +41,7 @@ module Prism
   end
 end
 
+require 'prism/microformat/hresume'
 require 'prism/microformat/reltag'
 require 'prism/microformat/rellicense'
 require 'prism/microformat/votelinks'

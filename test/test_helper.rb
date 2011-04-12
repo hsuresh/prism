@@ -35,3 +35,9 @@ def test_fixture(filename)
   html = get_fixture('test-fixture/' + filename)
   doc = Nokogiri::HTML.parse(html).css('#uf').first
 end
+
+class Test::Unit::TestCase
+  def assert_false(condition, message=nil)
+    assert (not condition), message
+  end
+end
