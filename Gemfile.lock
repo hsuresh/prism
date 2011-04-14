@@ -8,17 +8,18 @@ GEM
       bundler (~> 1.0.0)
       git (>= 1.2.5)
       rake
-    nokogiri (1.4.4)
+    nokogiri (1.4.4.1-x86-mingw32)
     rake (0.8.7)
     redgreen (1.2.2)
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   contest
   fakeweb
   jeweler
-  nokogiri
-  rake
+  nokogiri (= 1.4.4.1)
+  rake (= 0.8.7)
   redgreen
