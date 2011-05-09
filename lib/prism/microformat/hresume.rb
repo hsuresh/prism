@@ -18,30 +18,30 @@ module Prism
       end
 
       def name
-        first_name = get_content('//div[@class="profile-header"]//span[@class="given-name"]', @root)
-        last_name  = get_content('//div[@class="profile-header"]//span[@class="family-name"]', @root)
+        first_name = get_content('//div[contains(@class, "profile-header")]//span[contains(@class, "given-name")]', @root)
+        last_name  = get_content('//div[contains(@class, "profile-header")]//span[contains(@class, "family-name")]', @root)
         first_name[0] + " " + last_name[0]
       end
 
       def current_title
-        title = get_content('//div[@class="profile-header"]//p[@class="title"]', @root)
+        title = get_content('//div[contains(@class, "profile-header")]//p[contains(@class, "title")]', @root)
         title[0]
       end
 
       def demographic
-        locality = get_content('//dl[@id="headline"]//dd[@class="locality"]', @root)
+        locality = get_content('//dl[@id="headline"]//dd[contains(@class,"locality")]', @root)
         locality[0]
       end
 
       def overview_summary
-        current   = get_content('//dd[@class="summary-current"]/ul/li', @root)
-        past      = get_content('//dd[@class="summary-past"]/ul/li', @root)
-        more_past = get_content('//dd[@class="summary-past"]/div[@id="morepast"]/ul/li', @root)
+        current   = get_content('//dd[contains(@class,"summary-current")]/ul/li', @root)
+        past      = get_content('//dd[contains(@class, "summary-past")]/ul/li', @root)
+        more_past = get_content('//dd[contains(@class,"summary-past")]/div[@id="morepast"]/ul/li', @root)
         current + past + more_past
       end
 
       def profile_summary
-        profile_summary = get_content('//div[@id="profile-summary"]/div[@class="content"]', @root)
+        profile_summary = get_content('//div[@id="profile-summary"]/div[contains(@class,"content")]', @root)
         profile_summary[0]
       end
 
