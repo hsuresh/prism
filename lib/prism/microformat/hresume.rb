@@ -18,22 +18,19 @@ module Prism
       end
 
       def name
-        first_name = get_content('//div[contains(@class, "profile-header")]//span[contains(@class, "given-name")]', @root)
-        last_name  = get_content('//div[contains(@class, "profile-header")]//span[contains(@class, "family-name")]', @root)
-        puts 'ddd'
-        puts first_name
-        puts last_name
-        first_name[0] + " " + last_name[0]
+        first_name = remove_newlines(@root.css(".given-name").text)
+        last_name  = remove_newlines(@root.css(".family-name").text)
+        first_name + " " + last_name
       end
 
       def current_title
-        title = get_content('//div[contains(@class, "profile-header")]//p[contains(@class, "title")]', @root)
-        title[0]
+        title = remove_newlines(@root.css(".profile-header .title").text)
+        title
       end
 
       def demographic
-        locality = get_content('//dl[@id="headline"]//dd[contains(@class,"locality")]', @root)
-        locality[0]
+        locality = remove_newlines(@root.css("#headline .locality").text)
+        locality
       end
 
       def overview_summary
