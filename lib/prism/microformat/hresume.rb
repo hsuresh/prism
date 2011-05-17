@@ -20,6 +20,7 @@ module Prism
       def name
         first_name = get_content('//div[contains(@class, "profile-header")]//span[contains(@class, "given-name")]', @root)
         last_name  = get_content('//div[contains(@class, "profile-header")]//span[contains(@class, "family-name")]', @root)
+        puts 'ddd'
         puts first_name
         puts last_name
         first_name[0] + " " + last_name[0]
