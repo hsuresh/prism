@@ -6,7 +6,7 @@ class HResumeTest < Test::Unit::TestCase
     end
 
     setup do
-      @doc     ||= Nokogiri.HTML(get_fixture('hresume/Muhilan_Rajaram.html'))
+      @doc     ||= Nokogiri.HTML(get_fixture('hresume/abc.html'))
       @hresume = Prism::Microformat::HResume.new(@doc)
     end
 
