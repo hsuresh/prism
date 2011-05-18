@@ -81,7 +81,7 @@ module Prism
           position             = Position.new
           position.title       = remove_newlines(position_node.css('span.title').text)
           position.org         = remove_newlines(position_node.css('span.summary').text)
-          position.description = remove_newlines(position_node.css('p.desc').text)
+          position.description = remove_newlines(position_node.css('p.description').text)
           position.calendar    = get_calendar(position_node, "p.period")
           positions << position
         end

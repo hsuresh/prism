@@ -43,6 +43,9 @@ class HResumeTest < Test::Unit::TestCase
       assert_equal "THOUGHTWORKS Technologies", exp.org
       assert_equal "January 2010", exp.calendar['start']
       assert_equal "", exp.calendar['end']
+      puts "ddd"
+      puts exp.description
+      assert_equal "",exp.description
       assert_equal "(1 year 3 months)", exp.calendar['duration']
       assert_equal "Present", exp.calendar['timestamp']
     end
